@@ -25,6 +25,16 @@ let showBSlash = () => {
 //-------------GAME LOGIC-------------
 $(function () {
     let char = 'X';
+
+    $('.field-wrapper').slideDown({
+        start: function () {
+            $(this).css({
+                display: "flex"
+            })
+        },
+        duration: 900
+    });
+
     $('.field-wrapper').click(event => {
         if ($(event.target).text() == '') {
             $(event.target).text(char);
