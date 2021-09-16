@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Roboto', sans-serif;
+}
+
+.field-wrapper {
+    width: 30vw;
+    height: 30vw;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.field {
+    width: 33.3333%;
+    height: 33.3333%;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 8vw;
+    color: red;
+}
+
+.f11, .f21, .f31 {
+    border-left: none;
+}
+
+.f13, .f23, .f33 {
+    border-right: none;
+}
+
+.f11, .f12, .f13 {
+    border-top: none;
+}
+
+.f31, .f32, .f33 {
+    border-bottom: none;
+}
+
+.restartBtn {
+    margin-top: 3vw;
+    width: 20vw;
+    height: 4vw;
+    background-color: transparent;
+    border: 3px solid red;
+    color: red;
+    font-size: large;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.restartBtn:hover {
+    background-color: red;
+    color: white;
+}
+
+/*------------PULSE ANIMATION------------*/
+
+@keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 0.8vw rgba(255, 0, 0, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
+    }
+  }
