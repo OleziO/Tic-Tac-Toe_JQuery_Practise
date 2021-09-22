@@ -6,7 +6,8 @@
     box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
     height: 100%;
 }
 
@@ -19,6 +20,8 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+/*------------GAME FIELD------------*/
+
 .field-wrapper {
     width: 30vw;
     height: 30vw;
@@ -26,6 +29,8 @@ body {
     flex-wrap: wrap;
     position: relative;
 }
+
+/*------------BOXES------------*/
 
 .field {
     width: 33.3333%;
@@ -38,21 +43,35 @@ body {
     color: red;
 }
 
-.f11, .f21, .f31 {
+.field:hover {
+    background-color: rgba(80, 80, 80, 0.1);
+}
+
+.f11,
+.f21,
+.f31 {
     border-left: none;
 }
 
-.f13, .f23, .f33 {
+.f13,
+.f23,
+.f33 {
     border-right: none;
 }
 
-.f11, .f12, .f13 {
+.f11,
+.f12,
+.f13 {
     border-top: none;
 }
 
-.f31, .f32, .f33 {
+.f31,
+.f32,
+.f33 {
     border-bottom: none;
 }
+
+/*------------RESTART BUTTON------------*/
 
 .restartBtn {
     margin-top: 3vw;
@@ -75,12 +94,14 @@ body {
 
 @keyframes pulse {
     0% {
-      box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.4);
+        box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.4);
     }
+
     70% {
         box-shadow: 0 0 0 0.8vw rgba(255, 0, 0, 0);
     }
+
     100% {
         box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
     }
-  }
+}

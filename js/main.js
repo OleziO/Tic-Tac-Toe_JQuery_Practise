@@ -1,23 +1,30 @@
+//--------------VARIABLES---------------
+let win = false;
 //-------------WIN FUNCTION-------------
 let showHorizontal = i => {
+    win = true;
+    
     for (let j = 1; j <= 3; j++)
         $(`.f${i}${j}`).css('background-color', 'lightgreen');
     $('.restartBtn').css('animation', 'pulse 2s infinite');
 }
 
 let showVertical = i => {
+    win = true;
     for (let j = 1; j <= 3; j++)
         $(`.f${j}${i}`).css('background-color', 'lightgreen');
     $('.restartBtn').css('animation', 'pulse 2s infinite');
 }
 
 let showSlash = () => {
+    win = true;
     for (let j = 1; j <= 3; j++)
         $(`.f${j}${j}`).css('background-color', 'lightgreen');
     $('.restartBtn').css('animation', 'pulse 2s infinite');
 }
 
 let showBSlash = () => {
+    win = true;
     for (let j = 1; j <= 3; j++)
         $(`.f${j}${4-j}`).css('background-color', 'lightgreen');
     $('.restartBtn').css('animation', 'pulse 2s infinite');
@@ -36,6 +43,7 @@ $(function () {
     });
 
     $('.field-wrapper').click(event => {
+        if (win) return;
         if ($(event.target).text() == '') {
             $(event.target).text(char);
             for (let i = 1; i <= 3; i++)
