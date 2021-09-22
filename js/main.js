@@ -3,7 +3,6 @@ let win = false;
 //-------------WIN FUNCTION-------------
 let showHorizontal = i => {
     win = true;
-    
     for (let j = 1; j <= 3; j++)
         $(`.f${i}${j}`).css('background-color', 'lightgreen');
     $('.restartBtn').css('animation', 'pulse 2s infinite');
@@ -43,7 +42,8 @@ $(function () {
     });
 
     $('.field-wrapper').click(event => {
-        if (win) return;
+        if (win) 
+            return;
         if ($(event.target).text() == '') {
             $(event.target).text(char);
             for (let i = 1; i <= 3; i++)
@@ -69,11 +69,17 @@ $(function () {
                 $(`.f13`).text() != '' ?
                 showBSlash() :
                 '';
-
             char = char == 'X' ? 'O' : 'X';
-        } else
-            $(event.target).text();
+        }a
     });
+
+    $(".field").on('mouseover', function () {
+        if (!win)
+            $(this).css('background-color', 'rgba(80, 80, 80, 0.1)');
+     }).on('mouseout', function () {
+        if (!win)
+            $(this).css('background', '');
+     });
 })
 //-------------PAGE ROLOAD-------------
 $('.restartBtn').click(() => location.reload());
